@@ -1,0 +1,19 @@
+server:
+  port: 8990
+  servlet:
+    context-path: /threadpool
+  max-http-header-size: 100000
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+
+async:
+  executor:
+    thread:
+      core_pool_size: 5
+      max_pool_size: 5
+      queue_capacity: 99999
+      name:
+        prefix: async-service-
