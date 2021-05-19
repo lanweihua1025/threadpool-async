@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * <p>
- * 患者信息表(每次医保卡验证同时更新) 前端控制器
+ * 前端控制器
  * </p>
  *
  * @author auto
@@ -33,14 +33,10 @@ public class AsyncController {
     @ResponseBody
     @RequestMapping(value = "/demo", method = RequestMethod.GET)
     public ResponseResult async() {
-//        log.info("【根据银行下单号获取银行订单信息】参数为");
         try {
-//            int count = baPersonService.insertPersonInfo();
-//            log.info("【根据银行下单号获取银行订单信息】");
             asyncService.asyncMethod();
             return ResponseResult.success();
         } catch (ResultException e) {
-//            log.error("【根据银行下单号获取银行订单信息】错误信息为：", e);
             return ResponseResult.error(e);
         }
     }
